@@ -27,10 +27,10 @@ function Footer() {
               YOUR DESTINATION FOR <br /> EXCLUSIVE & TRENDY FINDS
             </Typography>
             <Box sx={{ display: "flex", gap: 1, mt: 2 }}>
-              <a href="#"><Facebook /></a>
-              <a href="#"><Instagram /></a>
-              <a href="#"><X /></a>
-              <a href="#"><Youtube /></a>
+              <a href="https://facebook.com/trendysty" target="_blank" rel="noopener noreferrer"><Facebook /></a>
+              <a href="https://instagram.com/trendysty" target="_blank" rel="noopener noreferrer"><Instagram /></a>
+              <a href="https://twitter.com/trendysty" target="_blank" rel="noopener noreferrer"><X /></a>
+              <a href="https://youtube.com/trendysty" target="_blank" rel="noopener noreferrer"><Youtube /></a>
               {/* <a href="#"><Pinterest /></a> */}
             </Box>
             <Typography variant="h6" sx={{ mt: 1, fontWeight: 700 }}>

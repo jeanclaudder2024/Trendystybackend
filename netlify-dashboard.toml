@@ -1,7 +1,7 @@
 # Netlify Configuration for Trendysty Dashboard
 [build]
   base = "Dashboard"
-  publish = "Dashboard/build"
+  publish = "build"
   command = "npm run build"
 
 [build.environment]
