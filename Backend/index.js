@@ -11,12 +11,30 @@ const shippingImageRoutes = require('./Routes/shippingImagesRoutes');
 const app = express();
 const allowedOrigins = [
   'http://localhost:3000',
-  'http://localhost:3001'
+  'http://localhost:3001',
+  'https://trendysty-website.netlify.app',
+  'https://trendysty-dashboard.netlify.app',
+  // Add your actual Netlify URLs here when you get them
+  /^https:\/\/.*\.netlify\.app$/,
+  /^https:\/\/.*\.onrender\.com$/
 ];
 
 app.use(cors({
   origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    
+    // Check if origin matches any allowed origins (strings or regex)
+    const isAllowed = allowedOrigins.some(allowedOrigin => {
+      if (typeof allowedOrigin === 'string') {
+        return allowedOrigin === origin;
+      } else if (allowedOrigin instanceof RegExp) {
+        return allowedOrigin.test(origin);
+      }
+      return false;
+    });
+    
+    if (isAllowed) {
       return callback(null, true);
     } else {
       return callback(new Error('Not allowed by CORS'));

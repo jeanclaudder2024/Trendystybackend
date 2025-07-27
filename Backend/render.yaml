@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: trendysty-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: MONGO_URI
+        fromDatabase:
+          name: trendysty-db
+          property: connectionString
+      - key: UPLOADCARE_PUBLIC_KEY
+        value: 361a29fdb08c5a30c922
+
+databases:
+  - name: trendysty-db
+    databaseName: trendysty
+    user: trendysty-user
