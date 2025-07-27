@@ -1,0 +1,22 @@
+.section-divider {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin: 2rem 0;
+ width: 100%;
+}
+
+.section-divider::before,
+.section-divider::after {
+ content: "";
+ flex: 1;
+ height: 1px;
+ background:var(--accent-color); /* line color */
+ margin: 0 1rem;
+}
+
+.section-divider div {
+ font-size: 1.5rem;
+ letter-spacing: 0.5rem;
+ color: #999; /* star color */
+}
