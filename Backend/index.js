@@ -12,8 +12,8 @@ const app = express();
 const allowedOrigins = [
     'http://localhost:3000',
     'http://localhost:3001',
-    'https://trendysty-dashboard.netlify.app',
-    'https://trendysty-website.netlify.app'
+    'https://trendysty.netlify.app',
+    'https://trendystydashbord.netlify.app'
 ];
 
 app.use(cors({
